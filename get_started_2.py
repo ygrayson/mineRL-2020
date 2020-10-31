@@ -1,6 +1,8 @@
+import os
 import minerl
-data = minerl.data.make('MineRLObtainDiamond-v0')
+os.environ['MINERL_DATA_ROOT'] = "/home/qianbo/Documents/mineRL-2020/data/"
 
+data = minerl.data.make('MineRLObtainDiamond-v0')
 
 for current_state, action, reward, next_state, done \
     in data.batch_iter(
